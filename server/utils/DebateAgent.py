@@ -30,7 +30,7 @@ class DebateAgent:
         # Get the AI response based on the current chat history
         config = {"configurable": {"thread_id": "abc123"}}
         final_message = ""
-        
+        print("HISTORY---->", self.chat_history)
         for chunk in self.agent_executor.stream({"messages": self.chat_history}, config):
             final_message = chunk
         

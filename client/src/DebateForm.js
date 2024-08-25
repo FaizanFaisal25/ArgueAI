@@ -1,9 +1,14 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-export default function DebateForm({ onStartDebate }) {
+export default function DebateForm({ onStartDebate, setForName, setAgainstName, forName, againstName}) {
   const [motion, setMotion] = useState('');
-  const [forName, setForName] = useState('');
-  const [againstName, setAgainstName] = useState('');
+
+  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+
+  useEffect(() => {
+    // Check if all fields are filled
+    setIsButtonDisabled(!(motion && forName && againstName));
+  }, [motion, forName, againstName]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -47,6 +52,7 @@ export default function DebateForm({ onStartDebate }) {
         <button
           type="submit"
           className="w-full py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+          disabled={isButtonDisabled}
         >
           Start Debate
         </button>
