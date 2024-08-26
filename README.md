@@ -51,9 +51,3 @@ The frontend of the application runs on `localhost:3000` by default, and the bac
 ### Contribution
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-### License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
--Enjoy ArgueAI, Happy Coding!
