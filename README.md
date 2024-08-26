@@ -28,7 +28,7 @@ TAVILY_API_KEY=your-api-key-here
 ```
 4. Navigate to the client directory. Here, install the required dependencies using npm.
 ```bash
-cd ArgueAI/server
+cd ArgueAI/client
 npm install
 ```
 ### Running the Application
