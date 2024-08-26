@@ -74,31 +74,34 @@ function App() {
         />
       ) : (
         <div className="p-4">
-          <h1 className="text-xl font-bold mb-4">Debate in Progress...</h1>
+          <div className="bg-black p-6 rounded-lg shadow-md mb-8">
+            <h1 className="text-2xl font-bold text-center text-white">The Debate</h1>
+          </div>
+  
           <div className="messages space-y-4">
             {messages.map((msg, index) => (
               <div
                 key={index}
-                className={`flex items-start space-x-3 p-4 rounded-lg ${
-                  msg.agentIndex === 0
-                    ? 'bg-blue-100 text-blue-900 self-start'
-                    : 'bg-green-100 text-green-900 self-end'
+                className={`flex p-4 rounded-lg border border-gray-300 ${
+                  index % 2 === 0
+                    ? 'bg-white text-black w-full'
+                    : 'bg-black text-white w-full'
                 }`}
               >
                 {/* Avatar/Icon */}
                 <div className="shrink-0">
                   {msg.agentIndex === 0 ? (
                     <span role="img" aria-label="For">
-                      💬
+                      🗨️
                     </span>
                   ) : (
-                    <span role="img" aria-label="Against">
-                      🗨️
+                    <span role="img" aria-label="Against">  
+                      💬
                     </span>
                   )}
                 </div>
                 {/* Message Content */}
-                <div>
+                <div className="ml-3">
                   <div className="text-sm font-semibold">
                     {msg.agentIndex === 0 ? forName : againstName}
                   </div>
@@ -111,6 +114,7 @@ function App() {
       )}
     </div>
   );
+  
 }
 
 export default App;
