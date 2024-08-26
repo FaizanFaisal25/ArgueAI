@@ -14,7 +14,7 @@ Ensure that you have the latest version of npm and Python installed on your mach
 
 1. Clone the repository to your local machine.
 ```bash
-git clone https://github.com/yourusername/ArgueAI.git
+git clone https://github.com/FaizanFaisal25/ArgueAI.git
 ```
 2. Navigate to Server Folder, and install the required dependencies using pip.
 ```bash
