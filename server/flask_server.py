@@ -24,7 +24,6 @@ def test():
 def initialize_agents():
     # Extract data from the request
     data = request.json
-    print(data)
 
     # Extract relevant information
     topic = data.get('motion', "The internet is a force for good")
@@ -37,8 +36,6 @@ def initialize_agents():
 
     global DebateAgent_1
     global DebateAgent_2
-
-    print("Agent 1 Prompt: ", agent_1_sys_prompt)
     
     # Initialize the agents
     DebateAgent_1 = DebateAgent(system_message=agent_1_sys_prompt, opponent_name=agent_name_2)
@@ -57,7 +54,6 @@ def handle_message():
     global DebateAgent_2
 
     data = request.json
-    print("DATA---->", data)
     if not data or 'agent_index' not in data or 'message' not in data:
         return jsonify({'error': 'Invalid request'}), 400
     

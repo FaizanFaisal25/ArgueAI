@@ -61,12 +61,17 @@ function App() {
       return 0;
     }
   };
-  
 
   return (
     <div className="App">
       {!debateStarted ? (
-        <DebateForm onStartDebate={startDebate} setForName={setForName} setAgainstName={setAgainstName} forName={forName} againstName={againstName}/>
+        <DebateForm
+          onStartDebate={startDebate}
+          setForName={setForName}
+          setAgainstName={setAgainstName}
+          forName={forName}
+          againstName={againstName}
+        />
       ) : (
         <div className="p-4">
           <h1 className="text-xl font-bold mb-4">Debate in Progress...</h1>
@@ -74,16 +79,31 @@ function App() {
             {messages.map((msg, index) => (
               <div
                 key={index}
-                className={`p-4 rounded-lg ${
+                className={`flex items-start space-x-3 p-4 rounded-lg ${
                   msg.agentIndex === 0
                     ? 'bg-blue-100 text-blue-900 self-start'
                     : 'bg-green-100 text-green-900 self-end'
                 }`}
               >
-                <div className="text-sm font-semibold">
-                  {msg.agentIndex === 0 ? forName : againstName}
+                {/* Avatar/Icon */}
+                <div className="shrink-0">
+                  {msg.agentIndex === 0 ? (
+                    <span role="img" aria-label="For">
+                      💬
+                    </span>
+                  ) : (
+                    <span role="img" aria-label="Against">
+                      🗨️
+                    </span>
+                  )}
                 </div>
-                <p className="mt-2">{msg.message}</p>
+                {/* Message Content */}
+                <div>
+                  <div className="text-sm font-semibold">
+                    {msg.agentIndex === 0 ? forName : againstName}
+                  </div>
+                  <p className="mt-1">{msg.message}</p>
+                </div>
               </div>
             ))}
           </div>
