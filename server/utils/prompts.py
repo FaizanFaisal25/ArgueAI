@@ -7,7 +7,7 @@ def initialize_debater_prompt(name, stance, motion, opponent_name):
         f"instead, focus on introducing new and persuasive reasoning. Stick to your stance "
         f"and remain resolute, rather than being swayed by {opponent_name}'s arguments. "
         f"You may use the internet (via Tavily Search Tool) to gather evidence and "
-        f"supporting information."
+        f"supporting information. Do not use markdown in your responses."
     )
     
     if stance == 'in favor of':
