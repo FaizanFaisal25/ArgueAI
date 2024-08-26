@@ -2,6 +2,9 @@
 
 ArgueAI is a unique tool that simulates a debate between two Artificial Intelligence (AI) powered agents, leveraging the capabilities of search engine and language model technologies. This AI-based debate tool implements the power of the OpenAI and Tavily APIs for its NLP models.
 
+![Screenshot 1](client/public/Screenshot_1.png)
+![Screenshot 2](client/public/Screenshot_2.png)
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
